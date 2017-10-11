@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Buycraft",
+    "address": "https://minecartrapidtransit.buycraft.net",
+    "status_address": "http://status.buycraft.net"
+  },
+  {
+    "name": "Discord",
+    "address": null,
+    "status_address": "https://status.discordapp.com"
+  },
+  {
+    "name": "Mojang",
+    "address": null,
+    "status_address": "https://help.mojang.com"
+  }
+]

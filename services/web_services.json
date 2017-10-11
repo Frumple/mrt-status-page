@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Website",
+    "address": "https://www.minecartrapidtransit.net",
+    "status": null,
+    "message": null
+  },
+  {
+    "name": "Wiki",
+    "address": "https://wiki.minecartrapidtransit.net",
+    "status": null,
+    "message": null
+  },
+  {
+    "name": "File Server",
+    "address": "https://files.minecartrapidtransit.net",
+    "basic_auth_username": "username",
+    "basic_auth_password": "password",
+    "status": null,
+    "message": null
+  },
+  {
+    "name": "Main Dynmap",
+    "address": "https://dynmap.minecartrapidtransit.net",
+    "status": null,
+    "message": null
+  },
+  {
+    "name": "Beta Dynmap",
+    "address": "https://dynmap-beta.minecartrapidtransit.net",
+    "status": null,
+    "message": null
+  }
+]

@@ -1,0 +1,184 @@
+* {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+.last-updated-value {
+    font-style: italic;
+}
+
+.player-count-note {
+    padding: 5px;
+    font-size: small;    
+}
+
+.services {
+    table-layout: fixed;
+    white-space: nowrap;
+    border-collapse: collapse;
+    width: 800px;
+}
+
+.services tr {
+    display: table-row;
+}
+
+.services tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.services td, .services th {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid #ddd;
+    padding: 7px;
+}
+
+.services th {
+    text-align: left;
+    background-color: #666;
+    color: white;
+}
+
+.name-header {
+    width: 100px;
+}
+
+.address-header {
+    width: 350px;
+}
+
+.version-header, .code-header {
+    width: 105px;
+}
+
+.link-header {
+    width: 305px;
+}
+
+.players-header, .reason-header {
+    width: 70px;
+}
+
+.players:hover .dropdown {
+    display: block;
+}
+
+.player-list {
+    background-color: #ffffaa;
+}
+
+.status-header {
+    width: 100px;
+}    
+
+.status:hover .dropdown {
+    display: block;
+}
+
+.message {
+    background-color: #aaffff;
+    white-space: pre-line;
+}
+
+.hoverable {
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: #bbb;
+    text-underline-position: under;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    color: black;
+    box-shadow: 5px 5px 15px #000;
+    padding: 5px;
+    margin: 0;
+    list-style-type: none;
+    z-index: 1;
+}
+
+.status-online {
+    background-color: #00A000; 
+    color: white;
+}
+
+.status-online:before {
+    content: "Good Service";
+}
+
+.message-online:before {
+    white-space: pre;
+    content: "Service is responding normally. \a No major issues reported.";
+}
+
+.status-offline {
+    background-color: #A00000;
+    color: white;
+}    
+
+.status-offline:before {
+    content: "No Service";
+}
+
+.message-offline:before {
+    white-space: pre;
+    content: "Service is not responding. \a Contact staff for details.";
+}
+
+.status-partial {
+    background-color: #A0A000;
+    color: white;
+}
+
+.status-partial:before {
+    content: "Fair Service";
+}
+
+.message-partial:before {
+    white-space: pre;
+    content: "Service is experiencing issues. \a Contact staff for details.";
+}
+
+.status-alert {
+    background-color: #A000A0;
+    color: white;
+}
+
+.status-alert:before {
+    content: "Alert";      
+}
+
+.message-alert:before {
+    white-space: pre;
+    content: "Important news about this service. \a Check latest announcements for details.";
+}
+
+.status-maintenance {
+    background-color: #0000A0;
+    color: white;
+}
+
+.status-maintenance:before {
+    content: "Maintenance";      
+}
+
+.message-maintenance:before {
+    white-space: pre;
+    content: "Service is down for scheduled maintenance. \a Check latest announcements for details.";
+}
+
+.status-unknown {
+    background-color: #000000;
+    color: white;        
+}
+
+.status-unknown:before {
+    content: "Unknown";
+} 
+
+.message-unknown:before {
+    white-space: pre;
+    content: "Unable to determine service status. \a Contact staff for details.";
+}

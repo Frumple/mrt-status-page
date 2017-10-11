@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Main",
+    "address": "minecartrapidtransit.net",
+    "status": null,
+    "message": null
+  },
+  {
+    "name": "Beta",
+    "address": "minecartrapidtransit.net",
+    "port": 35565,
+    "status": null,
+    "message": null
+  }
+]    
