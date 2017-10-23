@@ -57,7 +57,7 @@ def refresh_data():
     print("--- Data refresh finished at: {} ---".format(data.last_updated))    
 
 app = Flask(__name__)
-app.config.from_pyfile("config.cfg")
+app.config.from_pyfile("config.py")
 with app.app_context():
   MumbleServer.init_slice()
   init_data_store(app)
