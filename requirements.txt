@@ -1,0 +1,6 @@
+Flask>=0.12.2
+mcstatus>=2.2
+redis>=2.10.6
+requests>=2.18.4
+schedule>=0.4.3
+zeroc-ice>=3.7.0

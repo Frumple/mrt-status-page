@@ -19,9 +19,9 @@ This application was built using **Python 3.6.2**, and using the following packa
 - **schedule 0.4.3**
 - **zeroc-ice 3.7.0**
 
-After installing Python, the easiest way to install these packages is by using **pip**:
+After installing Python, the easiest way to install these packages is by navigating to the project root directory and using **pip** with the provided requirements file:
 
-    pip install Flask mcstatus redis requests schedule zeroc-ice
+    pip install -r requirements.txt
 
 ## Configuration
 
