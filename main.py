@@ -12,6 +12,8 @@ from classes.services.mumbleserver import MumbleServer
 from classes.services.webservice import WebService
 from classes.services.thirdpartyservice import ThirdPartyService
 
+from classes.utils.datetimeutils import DateTimeUtils
+
 from classes.data import Data
 from classes.enums import Status
 
@@ -47,14 +49,14 @@ def refresh_data():
     if data is None:
       data = Data()
     
-    print("Retrieved data last updated at: {}".format(data.last_updated))    
+    print("Data last updated: {}".format(data.last_updated))    
     
     data.load_services()
     data.get_all_statuses()
     
-    data_store.set_data(data)    
+    data_store.set_data(data)
      
-    print("--- Data refresh finished at: {} ---".format(data.last_updated))    
+    print("--- Data refresh finished: {} ---".format(data.last_updated))    
 
 app = Flask(__name__)
 app.config.from_pyfile("config.py")
@@ -70,7 +72,9 @@ def index():
 
   data = data_store.get_data()
 
-  print("Data last updated: " + data.last_updated);
+  print("Current time:      {}".format(DateTimeUtils.get_current_datetime_as_string()))
+  print("Data last updated: {}".format(data.last_updated));
+
   return render_template('index.html', \
     Status = Status, \
     MCServer = MCServer, \
@@ -81,7 +85,7 @@ def index():
     refresh_every_x_seconds = int(app.config["GET_STATUS_EVERY_X_MINUTES"]) * 60, \
     data = data)
     
-@app.teardown_appcontext  
+@app.teardown_appcontext
 def teardown(error):
   data_store.close_connection()
 

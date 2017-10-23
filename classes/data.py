@@ -3,7 +3,8 @@ from .services.mumbleserver import MumbleServer
 from .services.webservice import WebService
 from .services.thirdpartyservice import ThirdPartyService
 
-import datetime
+from .utils.datetimeutils import DateTimeUtils
+
 import json
 import os
 import time
@@ -18,6 +19,7 @@ class Data():
       self.json_path = json_path
       
     def load(self):
+      # Load the json for this service group only when it has been changed
       if os.path.getmtime(self.json_path) > self.last_loaded:
         print("Loading {} group from {}...".format(self.type.__name__, self.json_path))
       
@@ -45,5 +47,4 @@ class Data():
       for service in self.service_groups[key].services:
         service.get_status()
      
-    last_updated_datetime = datetime.datetime.now(datetime.timezone.utc)
-    self.last_updated = last_updated_datetime.strftime("%Y-%m-%d %H:%M:%S %Z")
+    self.last_updated = DateTimeUtils.get_current_datetime_as_string()
