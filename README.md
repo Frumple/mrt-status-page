@@ -83,6 +83,7 @@ Finally, in **mumble\_servers.json**, add an entry for your Mumble server. Note 
       "ice_address": "127.0.0.1",
       "ice_port": 6502,
       "ice_secret": "secret",
+      "ice_timeout_in_millis": 1000,
       "status": null,
       "message": null
     }
