@@ -501,4 +501,7 @@ def index():
     
 @app.teardown_appcontext  
 def teardown(error):
-  data_store.close_connection()    
+  data_store.close_connection()
+
+if __name__ == "__main__":
+  app.run()
