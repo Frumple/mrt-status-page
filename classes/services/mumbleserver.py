@@ -76,7 +76,7 @@ class MumbleServer(Service):
         
         self.players.online = len(users)
         self.players.max = max_users
-        self.players.names = user_names
+        self.players.names = sorted(user_names, key = str.lower)
         
         if not self.status_override:
           self.status = Status.ONLINE

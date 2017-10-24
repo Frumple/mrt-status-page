@@ -64,7 +64,7 @@ class MCServer(Service):
       
       self.players.online = response.players.online
       self.players.max = response.players.max
-      self.players.names = response.players.names
+      self.players.names = sorted(response.players.names, key = str.lower)
       
       if not self.status_override:
         self.status = Status.ONLINE
