@@ -6,7 +6,7 @@ import sqlite3
 
 class SqliteDataStore(DataStore):
   def __init__(self, app):
-    self.app = app
+    DataStore.__init__(self, app)
 
     db = self.get_db()
     with db:
@@ -38,7 +38,7 @@ class SqliteDataStore(DataStore):
     db = self.get_db()
     
     with db:
-      pickled_data = pickle.dumps(data)    
+      pickled_data = pickle.dumps(data)
       binary_data = sqlite3.Binary(pickled_data)
       
       if self.get_data() is not None:

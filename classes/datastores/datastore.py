@@ -4,9 +4,8 @@ from flask import g
 class DataStore():
   __metaclass__ = ABCMeta
 
-  @abstractmethod
-  def __init__(self):
-    pass
+  def __init__(self, app):
+    self.app = app
 
   @abstractmethod  
   def open_connection(self):
