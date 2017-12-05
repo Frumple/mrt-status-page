@@ -8,7 +8,14 @@
 
 .player-count-note {
     padding: 5px;
-    font-size: small;    
+    font-size: small;
+    font-style: italic;
+}
+
+.footer {
+    padding: 5px;
+    font-size: small;
+    font-style: italic;
 }
 
 .services {
@@ -100,7 +107,7 @@
 }
 
 .status-online {
-    background-color: #00A000; 
+    background-color: #00A000;
     color: white;
 }
 
@@ -147,7 +154,7 @@
 }
 
 .status-alert:before {
-    content: "Alert";      
+    content: "Alert";
 }
 
 .message-alert:before {
@@ -161,7 +168,7 @@
 }
 
 .status-maintenance:before {
-    content: "Maintenance";      
+    content: "Maintenance";
 }
 
 .message-maintenance:before {
@@ -171,7 +178,7 @@
 
 .status-unknown {
     background-color: #000000;
-    color: white;        
+    color: white;
 }
 
 .status-unknown:before {

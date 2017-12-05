@@ -13,7 +13,7 @@
     </div>
     <h2>Minecraft Servers</h2>
     <table class="services">
-      <thead>    
+      <thead>
         <tr>
           <th class="name-header">Name</th>
           <th class="address-header">Address</th>
@@ -21,7 +21,7 @@
           <th class="players-header">Players</th>
           <th class="status-header">Status</th>
         <tr>
-      </thead>        
+      </thead>
       <tbody>
         {% for mc_server in data.service_groups[MCServer].services %}
         <tr>   
@@ -44,14 +44,14 @@
             <p class="dropdown message">{{ mc_server.message }}</p>
             {% endif %}
           </td> 
-        </tr>      
-        {% endfor %} 
-      </tbody>        
+        </tr>
+        {% endfor %}
+      </tbody>
     </table>
     <div class="player-count-note">* = This player count includes vanished staff members. Do not bother them in-game or you may be given a warning.</div>
     <h2>Mumble Servers</h2>
     <table class="services">
-      <thead>    
+      <thead>
         <tr>
           <th class="name-header">Name</th>
           <th class="address-header">Address</th>
@@ -85,7 +85,7 @@
         </tr>
         {% endfor %}
       </tbody>
-    </table>      
+    </table>
     <h2>Web Services</h2>
     <table class="services">
       <thead>
@@ -110,11 +110,11 @@
           {% else %}
           <p class="dropdown message">{{ web_service.message }}</p>
           {% endif %}
-          </td>          
+          </td>
         </tr>
         {% endfor %}
       </tbody>
-    </table>      
+    </table>
     <h2>Third-Party Services</h2>
     <table class="services">
       <thead>
@@ -135,9 +135,10 @@
           <td class="address"><a href="{{ third_party_service.address }}">{{ third_party_service.address }}</a></td>
           {% endif %}
           <td class="link"><a href="{{ third_party_service.status_address }}">{{ third_party_service.status_address }}</a></td>
-        </tr>     
+        </tr>
         {% endfor %}
       </tbody>
-    </table>    
+    </table>
+    <div class="footer">Created by <a href="mailto:frumple@minecartrapidtransit.net">Frumple</a>. This status page is freely available on <a href="https://github.com/Frumple/mrt-status-page">GitHub</a> under the <a href="https://opensource.org/licenses/MIT">MIT License</a>.</div>
   </body>
 </html>
