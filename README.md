@@ -1,3 +1,5 @@
+![Minecart Rapid Transit Logo](https://www.minecartrapidtransit.net/wp-content/uploads/2015/01/logo-with-title2.png)
+
 # MRT Status Page
 
 A simple Flask web application that reports the status of Minecraft (Java Edition) servers, Mumble servers, and websites. This application also retrieves up-to-date version and player data from Minecraft and Mumble servers.
@@ -148,11 +150,7 @@ Example:
 
 ## Running the Application
 
-The development server can be run by first setting the FLASK_APP environment variable to `mrt_status_page`
+The development server can be run by setting the FLASK_APP environment variable to `mrt_status_page`, then running Flask:
 
     export FLASK_APP=mrt_status_page
-
-Then install and run application:
-
-    pip install -e .
     flask run
