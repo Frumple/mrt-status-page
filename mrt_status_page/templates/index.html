@@ -92,8 +92,8 @@
         <tr>
           <th class="name-header">Name</th>
           <th class="address-header">Address</th>
-          <th class="code-header">Status Code</th>
-          <th class="reason-header">Reason</th>
+          <th class="response-header">Response</th>
+          <th class="code-header">Code</th>
           <th class="status-header">Status</th>
         </tr>
       </thead>
@@ -102,8 +102,8 @@
         <tr>
           <td class="name">{{ web_service.name }}</td>
           <td class="address"><a href="{{ web_service.address }}">{{ web_service.address }}</a></td>
-          <td class="code">{{ web_service.status_code }}</td>  
-          <td class="reason">{{ web_service.reason }}</td>
+          <td class="response">{{ web_service.response }}</td>
+          <td class="code">{{ web_service.status_code }}</td>
           <td class="hoverable status status-{{ web_service.status.value }}">
           {% if web_service.message is none %}
           <p class="dropdown message message-{{ web_service.status.value }}"></p>

@@ -48,7 +48,7 @@
     width: 350px;
 }
 
-.version-header, .code-header {
+.version-header, .response-header {
     width: 105px;
 }
 
@@ -56,7 +56,7 @@
     width: 305px;
 }
 
-.players-header, .reason-header {
+.players-header, .code-header {
     width: 70px;
 }
 

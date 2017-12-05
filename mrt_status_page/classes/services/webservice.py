@@ -25,7 +25,7 @@ class WebService(Service):
   
   def reset_status(self):
     self.status_code = ""
-    self.reason = ""
+    self.response = ""
   
   def get_status(self):
     print("Web Service: {} at {}".format(self.name, self.address))
@@ -40,7 +40,7 @@ class WebService(Service):
    
       http_response = requests.get(self.address, auth = http_basic_auth)
       self.status_code = http_response.status_code
-      self.reason = http_response.reason
+      self.response = http_response.reason
     
       if http_response.status_code < 400:
         if not self.status_override:
@@ -53,8 +53,8 @@ class WebService(Service):
       if not self.status_override:
           self.status = Status.OFFLINE
           
-    print("> Code: {}, Reason: {}, Status: {}, Message: {}".format( \
+    print("> Code: {}, Response: {}, Status: {}, Message: {}".format( \
       self.status_code, \
-      self.reason, \
+      self.response, \
       self.status.name, \
       self.message))
