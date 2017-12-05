@@ -1,8 +1,11 @@
 from .datastore import DataStore
 from flask import g
 
+import os
 import pickle
 import sqlite3
+
+SQLITE_SCHEMA_FILE = "schema.sql"
 
 class SqliteDataStore(DataStore):
   def __init__(self, app):
@@ -10,11 +13,12 @@ class SqliteDataStore(DataStore):
 
     db = self.get_db()
     with db:
-      with app.open_resource(app.config["SQLITE_SCHEMA_FILE"], mode = 'r') as file:
+      with app.open_resource(SQLITE_SCHEMA_FILE, mode = 'r') as file:
         db.cursor().executescript(file.read())
   
   def open_connection(self):
-    db = sqlite3.connect(self.app.config["SQLITE_DB_FILE"])
+    db_path = os.path.join(self.app.instance_path, self.app.config["SQLITE_DB_FILE"])
+    db = sqlite3.connect(db_path)
     db.row_factory = sqlite3.Row
     return db
 

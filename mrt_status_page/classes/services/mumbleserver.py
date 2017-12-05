@@ -94,7 +94,7 @@ class MumbleServer(Service):
       self.players.online, \
       self.players.max, \
       self.status.name, \
-      self.message))  
+      self.message))
       
     ice.destroy()
     
@@ -111,6 +111,6 @@ class MumbleServer(Service):
 
   @staticmethod
   def init_slice():
-    slice_dir = '-I' + Ice.getSliceDir()   
+    slice_dir = '-I' + Ice.getSliceDir()
     slice_file = 'Murmur.ice'  
     Ice.loadSlice('', [slice_dir] + [slice_file])

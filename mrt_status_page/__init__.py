@@ -4,18 +4,18 @@ from threading import Thread
 import schedule
 import time
 
-from classes.datastores.sqlitedatastore import SqliteDataStore
-from classes.datastores.redisdatastore import RedisDataStore
+from .classes.datastores.sqlitedatastore import SqliteDataStore
+from .classes.datastores.redisdatastore import RedisDataStore
 
-from classes.services.mcserver import MCServer
-from classes.services.mumbleserver import MumbleServer
-from classes.services.webservice import WebService
-from classes.services.thirdpartyservice import ThirdPartyService
+from .classes.services.mcserver import MCServer
+from .classes.services.mumbleserver import MumbleServer
+from .classes.services.webservice import WebService
+from .classes.services.thirdpartyservice import ThirdPartyService
 
-from classes.utils.datetimeutils import DateTimeUtils
+from .classes.utils.datetimeutils import DateTimeUtils
 
-from classes.data import Data
-from classes.enums import Status
+from .classes.data import Data
+from .classes.enums import Status
 
 def init_data_store(app):
   global data_store
@@ -47,7 +47,7 @@ def refresh_data():
     
     data = data_store.get_data()
     if data is None:
-      data = Data()
+      data = Data(app)
     
     print("Data last updated: {}".format(data.last_updated))    
     
@@ -58,7 +58,8 @@ def refresh_data():
      
     print("--- Data refresh finished: {} ---".format(data.last_updated))    
 
-app = Flask(__name__)
+app = Flask(__name__, instance_relative_config = True)
+app.config.from_object('mrt_status_page.default_config')
 app.config.from_pyfile("config.py")
 with app.app_context():
   MumbleServer.init_slice()

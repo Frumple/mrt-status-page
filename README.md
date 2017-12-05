@@ -10,33 +10,30 @@ The actual live status page can be viewed at: **[https://status.minecartrapidtra
 
 ## Prerequisites
 
-This application was built using **Python 3.6.2**, and using the following packages:
+This application was built using **Python 3.6.2**. Install it from **[https://www.python.org](https://www.python.org/)**.
 
-- **Flask 0.12.2**
-- **mcstatus 2.2**
-- **redis 2.10.6**
-- **requests 2.18.4**
-- **schedule 0.4.3**
-- **zeroc-ice 3.7.0**
-
-After installing Python, the easiest way to install these packages is by navigating to the project root directory and using **pip** with the provided requirements file:
+After installing Python, install the required packages by navigating to the application root directory and running **pip** with the provided requirements file:
 
     pip install -r requirements.txt
 
+Finally, copy the contents of the **instance_template** directory into a new directory named **instance**:
+
+    cp -R instance_template instance
+
 ## Configuration
 
-See **config.cfg** and choose your desired settings. This application supports two types of data stores, which are used to store the statuses retrieved from the services:
+Check **config.py** in the **instance** directory and choose your desired settings. This application supports two types of data stores, which are used to store the statuses retrieved from the services:
 
 - **SQLite 3** (stored in a database file of negligible size)
 - **Redis** (stored in-memory, you must set up your own Redis instance for this option)
 
 ## Setting up Services
 
-You can specify the servers you want to monitor in the JSON files in the **services** folder.
+You can specify the servers you want to monitor in the JSON files in the **instance/services** directory.
 
 ### Minecraft Servers
 
-This application uses **[mcstatus](https://github.com/Dinnerbone/mcstatus)**, a library made by the Minecraft developer Dinnerbone, to retrieve the status from a Minecraft server that has queries enabled. To enable queries on your server, go to your **server.properties file** and set the following:
+This application uses **[mcstatus](https://github.com/Dinnerbone/mcstatus)**, a library made by the Minecraft developer Dinnerbone, to retrieve the status from a Minecraft server that has queries enabled. To enable queries on your server, go to your server's **server.properties file** and set the following:
 
     enable-status=true
     query.port=25565
@@ -63,13 +60,13 @@ If your Minecraft server uses a different port or query port, you can specify th
 
 ### Mumble Servers
 
-This application uses **Zero-C ICE** to retrieve information from a Mumble server. To enable ICE on your server, go to your **murmur.ini** and uncomment the following line:
+This application uses **[Zero-C ICE](https://wiki.mumble.info/wiki/Ice)** to retrieve information from a Mumble server. To enable ICE on your server, go to your **murmur.ini** and uncomment the following line:
 
     ice="tcp -h 127.0.0.1 -p 6502"
 
 Note that the loopback address 127.0.0.1 will only work if you are hosting the Mumble server on the same host as the status page. Change the address and/or port according to your needs.
 
-It is strongly recommended that you specify an ICE read-only secret on your Mumble server, as well as keep the ICE write secret blank. This will ensure that parties that connect to your Mumble server by ICE can only read information about your server if they have the secret, and that they can never make any changes to the server. Specify the secrets in **murmur.ini**: 
+It is strongly recommended that you specify an ICE read-only secret on your Mumble server, as well as keep the ICE write secret blank. This will ensure that parties that connect to your Mumble server by ICE can only read information about your server if they have the secret, and that they can never make any changes to the server. Specify the secrets in your Mumble server's **murmur.ini**: 
 
     icesecretread=secret
     icesecretwrite=
@@ -116,7 +113,7 @@ Websites protected by HTTP Basic Auth are also supported. For such websites, add
 
 This category is intended for services that you do not own, and services where you do not want to actively check the status. Instead, a link can be specified to the third-party provider's own status page.
 
-In **third\_party\_services.json**, specify `address` as the address of the service if applicable, and `status_address` as the address of the service's status page. If `address` is null, it will display as "N/A".
+In **third\_party\_services.json**, specify `address` as the address of the service if applicable, and `status_address` as the address of the service's status page. If `address` is null, it will display as "N/A" on the page.
 
     {
       "name": "Mojang",
@@ -148,3 +145,14 @@ Example:
       "status": "MAINTENANCE",
       "message": "The server will be down for maintenance\nthis Monday, January 1st from 1-3pm UTC."
     }
+
+## Running the Application
+
+The development server can be run by first setting the FLASK_APP environment variable to `mrt_status_page`
+
+    export FLASK_APP=mrt_status_page
+
+Then install and run application:
+
+    pip install -e .
+    flask run

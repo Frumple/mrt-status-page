@@ -28,15 +28,16 @@ class Data():
 
         self.last_loaded = int(time.time())
     
-  def __init__(self):
-    self.last_updated = None
-    
-    self.service_groups = {}
-    
-    self.service_groups[MCServer] = Data.ServiceGroup(MCServer, 'services/mc_servers.json')
-    self.service_groups[MumbleServer] = Data.ServiceGroup(MumbleServer, 'services/mumble_servers.json')
-    self.service_groups[WebService] = Data.ServiceGroup(WebService, 'services/web_services.json')
-    self.service_groups[ThirdPartyService] = Data.ServiceGroup(ThirdPartyService, 'services/third_party_services.json')
+  def __init__(self, app):
+    self.last_updated = None    
+
+    services_path = os.path.join(app.instance_path, 'services')
+
+    self.service_groups = {}    
+    self.service_groups[MCServer] = Data.ServiceGroup(MCServer, os.path.join(services_path, 'mc_servers.json'))
+    self.service_groups[MumbleServer] = Data.ServiceGroup(MumbleServer, os.path.join(services_path, 'mumble_servers.json'))
+    self.service_groups[WebService] = Data.ServiceGroup(WebService, os.path.join(services_path, 'web_services.json'))
+    self.service_groups[ThirdPartyService] = Data.ServiceGroup(ThirdPartyService, os.path.join(services_path, 'third_party_services.json'))
 
   def load_services(self):
     for key in self.service_groups:
