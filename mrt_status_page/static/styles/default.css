@@ -6,6 +6,11 @@
     font-style: italic;
 }
 
+.error {
+    font-weight: bold;
+    color: red;
+}
+
 .player-count-note {
     padding: 5px;
     font-size: small;
@@ -77,7 +82,7 @@
 
 .status-header {
     width: 100px;
-}    
+}
 
 .status:hover .dropdown {
     display: block;
@@ -123,7 +128,7 @@
 .status-offline {
     background-color: #A00000;
     color: white;
-}    
+}
 
 .status-offline:before {
     content: "No Service";
@@ -183,7 +188,7 @@
 
 .status-unknown:before {
     content: "Unknown";
-} 
+}
 
 .message-unknown:before {
     white-space: pre;

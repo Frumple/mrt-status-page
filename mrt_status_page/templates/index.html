@@ -8,9 +8,15 @@
   </head>
   <body>
     <h1>{{ title }}</h1>
-    <div class="last-updated">Last Updated: 
+    {% if data.error %}
+    <div class="error">
+      <span>Error encountered while querying services. Please check the logs for details.</span>
+    </div>
+    {% else %}
+    <div class="last-updated">Last Updated:
       <span class="last-updated-value">{{ data.last_updated }}</span>
     </div>
+    {% endif %}
     <h2>Minecraft Servers</h2>
     <table class="services">
       <thead>
@@ -24,9 +30,9 @@
       </thead>
       <tbody>
         {% for mc_server in data.service_groups[MCServer].services %}
-        <tr>   
+        <tr>
           <td class="name">{{ mc_server.name }}</td>
-          <td class="address">{{ mc_server.address }}:{{ mc_server.port }}</td> 
+          <td class="address">{{ mc_server.address }}:{{ mc_server.port }}</td>
           <td class="version">{{ mc_server.software.brand }} {{ mc_server.software.version }}</td>
           <td class="hoverable players">{{ mc_server.players.online }} / {{ mc_server.players.max }} *
             {% if mc_server.players.online > 0 %}
@@ -43,7 +49,7 @@
             {% else %}
             <p class="dropdown message">{{ mc_server.message }}</p>
             {% endif %}
-          </td> 
+          </td>
         </tr>
         {% endfor %}
       </tbody>
@@ -131,7 +137,7 @@
           <td class="name">{{ third_party_service.name }}</td>
           <td class="address">N/A</td>
           {% else %}
-          <td class="name">{{ third_party_service.name }}</td>      
+          <td class="name">{{ third_party_service.name }}</td>
           <td class="address"><a href="{{ third_party_service.address }}">{{ third_party_service.address }}</a></td>
           {% endif %}
           <td class="link"><a href="{{ third_party_service.status_address }}">{{ third_party_service.status_address }}</a></td>

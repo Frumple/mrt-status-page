@@ -64,7 +64,7 @@ If your Minecraft server uses a different port or query port, you can specify th
 
 This application uses **[Zero-C ICE](https://wiki.mumble.info/wiki/Ice)** to retrieve information from a Mumble server. To enable ICE on your server, go to your **murmur.ini** and uncomment the following line:
 
-    ice="tcp -h **<your hostname>** -p 6502"
+    ice="tcp -h <your hostname> -p 6502"
 
 For the hostname, you can use `127.0.0.1` if you are hosting the Mumble server on the same host as the status page. Otherwise, use an IP or hostname that the status page can use to connect to the Mumble server.
 
