@@ -12,7 +12,7 @@ The actual live status page can be viewed at: **[https://status.minecartrapidtra
 
 ## Prerequisites
 
-This application was built using **Python 3.6.2**. Install it from **[https://www.python.org](https://www.python.org/)**.
+This application was built using **[Python 3.8.0](https://www.python.org/downloads/release/python-380)**.
 
 After installing Python, install the required packages by navigating to the application root directory and running **pip** with the provided requirements file:
 
@@ -64,9 +64,9 @@ If your Minecraft server uses a different port or query port, you can specify th
 
 This application uses **[Zero-C ICE](https://wiki.mumble.info/wiki/Ice)** to retrieve information from a Mumble server. To enable ICE on your server, go to your **murmur.ini** and uncomment the following line:
 
-    ice="tcp -h 127.0.0.1 -p 6502"
+    ice="tcp -h **<your hostname>** -p 6502"
 
-Note that the loopback address 127.0.0.1 will only work if you are hosting the Mumble server on the same host as the status page. Change the address and/or port according to your needs.
+For the hostname, you can use `127.0.0.1` if you are hosting the Mumble server on the same host as the status page. Otherwise, use an IP or hostname that the status page can use to connect to the Mumble server.
 
 It is strongly recommended that you specify an ICE read-only secret on your Mumble server, as well as keep the ICE write secret blank. This will ensure that parties that connect to your Mumble server by ICE can only read information about your server if they have the secret, and that they can never make any changes to the server. Specify the secrets in your Mumble server's **murmur.ini**: 
 

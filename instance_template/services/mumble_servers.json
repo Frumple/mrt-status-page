@@ -3,7 +3,7 @@
     "name": "Mumble",
     "address": "minecartrapidtransit.net",
     "port": 64738,
-    "ice_address": "127.0.0.1",
+    "ice_address": "minecartrapidtransit.net",
     "ice_port": 6502,
     "ice_secret": "secret",
     "ice_timeout_in_millis": 1000,

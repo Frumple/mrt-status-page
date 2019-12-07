@@ -102,3 +102,7 @@ ENV/
 
 # SQLite database files
 *.db
+
+# Visual Studio Code
+.vscode
+*.code-workspace

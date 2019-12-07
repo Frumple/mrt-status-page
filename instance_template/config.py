@@ -20,7 +20,7 @@ REDIS_PASSWORD = "password"  # The password required to access the Redis instanc
 # Other configuration options
 
 # The title of the status page
-PAGE_TITLE = "My Status Page"
+PAGE_TITLE = "Minecart Rapid Transit Status"
 
 # How often new statuses should be retrieved from the services
 GET_STATUS_EVERY_X_MINUTES = 1
