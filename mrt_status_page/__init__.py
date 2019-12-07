@@ -22,9 +22,9 @@ def init_data_store(app):
   global data_store
 
   data_store_type = app.config["DATA_STORE"]
-  if data_store_type is "sqlite":
+  if data_store_type == "sqlite":
     data_store = SqliteDataStore(app)
-  elif data_store_type is "redis":
+  elif data_store_type == "redis":
     data_store = RedisDataStore(app)
   else:
     raise TypeError("'{}' is not a valid data store type. Must be 'sqlite' or 'redis'.".format(data_store_type))
