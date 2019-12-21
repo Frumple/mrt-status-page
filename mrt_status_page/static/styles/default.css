@@ -2,6 +2,19 @@
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    margin-right: 10px;
+}
+
+.update-info {
+    margin-top: 1em;
+}
+
 .last-updated-value {
     font-style: italic;
 }

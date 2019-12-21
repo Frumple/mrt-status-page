@@ -7,16 +7,21 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/default.css') }}" />
   </head>
   <body>
-    <h1>{{ title }}</h1>
-    {% if data.error %}
-    <div class="error">
-      <span>Error encountered while querying services. Please check the logs for details.</span>
+    <div class="header">
+      <img src="{{ url_for('static', filename='logo-75.png') }}" alt="Minecart Rapid Transit Logo" class="logo">
+      <h1>{{ title }}</h1>
     </div>
-    {% else %}
-    <div class="last-updated">Last Updated:
-      <span class="last-updated-value">{{ data.last_updated }}</span>
+    <div class="update-info">
+      {% if data.error %}
+      <div class="error">
+        <span>Error encountered while querying services. Please check the logs for details.</span>
+      </div>
+      {% else %}
+      <div class="last-updated">Last Updated:
+        <span class="last-updated-value">{{ data.last_updated }}</span>
+      </div>
+      {% endif %}
     </div>
-    {% endif %}
     <h2>Minecraft Servers</h2>
     <table class="services">
       <thead>
@@ -145,6 +150,6 @@
         {% endfor %}
       </tbody>
     </table>
-    <div class="footer">This status page is an open-source web application that is <a href="https://github.com/Frumple/mrt-status-page">available on GitHub</a>.</div>
+    <div class="footer">This status page is an open-source Flask web application that is <a href="https://github.com/Frumple/mrt-status-page">available on GitHub</a>.</div>
   </body>
 </html>
