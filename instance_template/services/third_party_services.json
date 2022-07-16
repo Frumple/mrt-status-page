@@ -5,11 +5,6 @@
     "status_address": "https://status.discordapp.com"
   },
   {
-    "name": "Mojang",
-    "address": null,
-    "status_address": "https://help.mojang.com"
-  },
-  {
     "name": "CraftingStore",
     "address": "https://mrtserver.craftingstore.net",
     "status_address": "http://status.craftingstore.net"

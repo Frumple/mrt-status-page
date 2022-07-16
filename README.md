@@ -12,7 +12,7 @@ The actual live status page can be viewed at: **[https://status.minecartrapidtra
 
 ## Prerequisites
 
-This application was built using **[Python 3.8.0](https://www.python.org/downloads/release/python-380)**.
+This application uses **[Python 3.10.4](https://www.python.org/downloads/release/python-3104/)**. It may work on older or newer Python versions, but it has not been tested on those at the time of this writing.
 
 After installing Python, install the required packages by navigating to the application root directory and running **pip** with the provided requirements file:
 
@@ -35,7 +35,7 @@ You can specify the servers you want to monitor in the JSON files in the **insta
 
 ### Minecraft Servers
 
-This application uses **[mcstatus](https://github.com/Dinnerbone/mcstatus)**, a library made by the Minecraft developer Dinnerbone, to retrieve the status from a Minecraft server that has queries enabled. To enable queries on your server, go to your server's **server.properties file** and set the following:
+This application uses **[mcstatus](https://github.com/py-mine/mcstatus)**, a library made by the Minecraft developer Dinnerbone, to retrieve the status from a Minecraft server that has queries enabled. To enable queries on your server, go to your server's **server.properties file** and set the following:
 
     enable-status=true
     query.port=25565
@@ -68,7 +68,7 @@ This application uses **[Zero-C ICE](https://wiki.mumble.info/wiki/Ice)** to ret
 
 For the hostname, you can use `127.0.0.1` if you are hosting the Mumble server on the same host as the status page. Otherwise, use an IP or hostname that the status page can use to connect to the Mumble server.
 
-It is strongly recommended that you specify an ICE read-only secret on your Mumble server, as well as keep the ICE write secret blank. This will ensure that parties that connect to your Mumble server by ICE can only read information about your server if they have the secret, and that they can never make any changes to the server. Specify the secrets in your Mumble server's **murmur.ini**: 
+It is strongly recommended that you specify an ICE read-only secret on your Mumble server, as well as keep the ICE write secret blank. This will ensure that parties that connect to your Mumble server by ICE can only read information about your server if they have the secret, and that they can never make any changes to the server. Specify the secrets in your Mumble server's **murmur.ini**:
 
     icesecretread=secret
     icesecretwrite=
