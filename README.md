@@ -2,13 +2,15 @@
 
 # MRT Status Page
 
+**This project is no longer being maintained.**
+
 A simple Flask web application that reports the status of Minecraft (Java Edition) servers, Mumble servers, and websites. This application also retrieves up-to-date version and player data from Minecraft and Mumble servers.
 
 This page was built for the **[Minecart Rapid Transit (MRT) Minecraft Server](https://www.minecartrapidtransit.net)** to help inform players of the status of various services.
 
 ## Live Demo
 
-The actual live status page can be viewed at: **[https://status.minecartrapidtransit.net](https://status.minecartrapidtransit.net)**.
+The live demo that used to be at [https://status.minecartrapidtransit.net](https://status.minecartrapidtransit.net) is no longer available.
 
 ## Prerequisites
 
